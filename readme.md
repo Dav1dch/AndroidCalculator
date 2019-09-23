@@ -1,1 +1,1 @@
-this is a calculator for android!
+this is a calculator for android!～
