@@ -4,181 +4,120 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <TextView
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="55dp"
-        android:layout_marginTop="200dp"
-        android:text="Helloworld"
-        android:gravity="end"/>
+        android:background="#2196F3"
+        android:gravity="end"
+        android:paddingTop="250dp"
+        android:text="@string/Helloworld"
+        android:textSize="55sp" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="*"
-        style="?android:attr/buttonBarStyle"
         >
         <TableRow
             android:layout_weight="1">
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                android:text="AC" />
+                android:id="@+id/buttonAC"
+                style="@style/ButtonTheme"
+                android:text="AC"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonDEL"
+                style="@style/ButtonTheme"
                 android:text="Del"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonPercent"
+                style="@style/ButtonTheme"
                 android:text="%"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonDivide"
+                style="@style/ButtonTheme"
                 android:text="/"/>
-
         </TableRow>
         <TableRow
             android:layout_weight="1">
+
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button7"
+                style="@style/ButtonTheme"
                 android:text="7"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button8"
+                style="@style/ButtonTheme"
                 android:text="8"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                android:layout_height="match_parent"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
+                android:id="@+id/button9"
+                style="@style/ButtonTheme"
                 android:text="9"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                android:layout_height="match_parent"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonMuti"
+                style="@style/ButtonTheme"
                 android:text="*"/>
-
         </TableRow>
         <TableRow
             android:layout_weight="1">
+
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button4"
+                style="@style/ButtonTheme"
                 android:text="4"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button5"
+                style="@style/ButtonTheme"
                 android:text="5"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button6"
+                style="@style/ButtonTheme"
                 android:text="6"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonMinus"
+                style="@style/ButtonTheme"
                 android:text="-"/>
-
         </TableRow>
         <TableRow
             android:layout_weight="1">
+
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button1"
+                style="@style/ButtonTheme"
                 android:text="1"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button2"
+                style="@style/ButtonTheme"
                 android:text="2"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button3"
+                style="@style/ButtonTheme"
                 android:text="3"/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonPlus"
+                style="@style/ButtonTheme"
                 android:text="+"/>
-
         </TableRow>
         <TableRow
             android:layout_weight="1">
+
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:text=""/>
-            <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:text="0"/>
-            <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonDot"
+                style="@style/ButtonTheme"
                 android:text="."/>
             <Button
-                android:background="#F0FFFC"
-                android:textColor="#000000"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
+                android:id="@+id/button0"
+                style="@style/ButtonTheme"
+                android:text="0"/>
+            <Button
+                android:id="@+id/buttonEqual"
+                android:layout_weight="2"
+                style="@style/ButtonTheme"
+                android:background="#2196f3"
                 android:text="="/>
-
         </TableRow>
-    </TableLayout>
+        </TableLayout>
 
 
 </LinearLayout>
