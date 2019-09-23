@@ -6,13 +6,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#2196F3"
         android:gravity="end"
         android:paddingTop="250dp"
-        android:text="@string/Helloworld"
         android:textSize="55sp" />
     <TableLayout
         android:layout_width="match_parent"
