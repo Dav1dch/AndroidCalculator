@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.canon.calculator.calculate;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
     TextView text;
     private StringBuilder result = new StringBuilder();
@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        findViewById(R.id.button7).setOnClickListener(this);
        findViewById(R.id.button8).setOnClickListener(this);
        findViewById(R.id.button9).setOnClickListener(this);
-       findViewById(R.id.buttonAC).setOnClickListener(this);
+       findViewById(R.id.buttonLeft).setOnClickListener(this);
+       findViewById(R.id.buttonRight).setOnClickListener(this);
        findViewById(R.id.buttonDEL).setOnClickListener(this);
        findViewById(R.id.buttonMinus).setOnClickListener(this);
        findViewById(R.id.buttonMuti).setOnClickListener(this);
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        findViewById(R.id.buttonPercent).setOnClickListener(this);
        findViewById(R.id.buttonDot).setOnClickListener(this);
        findViewById(R.id.buttonPlus).setOnClickListener(this);
+       findViewById(R.id.buttonDEL).setOnLongClickListener(this);
 
 
     }
@@ -44,6 +46,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         init();
     }
 
+    @Override
+    public boolean onLongClick(View v){
+        int size = result.length();
+        if (v.getId()==R.id.buttonDEL){
+            result.delete(0, size);
+            text.setText(result);
+        }
+        return true;
+    }
     @Override
     public void onClick(View v) {
         int size = result.length();
@@ -150,11 +161,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 text.setText(result);
                 break;
 
-            case R.id.buttonAC:
-                result.delete(0, result.length());
+            case R.id.buttonLeft:
+                result.append("(");
                 text.setText(result);
                 break;
 
+            case R.id.buttonRight:
+                result.append(")");
+                text.setText(result);
+                break;
 
             case R.id.buttonEqual:
                 result.append("=");
@@ -176,4 +191,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
 }

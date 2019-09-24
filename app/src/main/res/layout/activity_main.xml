@@ -27,13 +27,13 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/buttonAC"
+                android:id="@+id/buttonLeft"
                 style="@style/ButtonTheme"
-                android:text="AC"/>
+                android:text="("/>
             <Button
-                android:id="@+id/buttonDEL"
+                android:id="@+id/buttonRight"
                 style="@style/ButtonTheme"
-                android:text="Del"/>
+                android:text=")"/>
             <Button
                 android:id="@+id/buttonPercent"
                 style="@style/ButtonTheme"
@@ -115,8 +115,12 @@
                 style="@style/ButtonTheme"
                 android:text="0"/>
             <Button
+                android:id="@+id/buttonDEL"
+                style="@style/ButtonTheme"
+                android:text="Del"/>
+
+            <Button
                 android:id="@+id/buttonEqual"
-                android:layout_weight="2"
                 style="@style/ButtonTheme"
                 android:background="#2196f3"
                 android:text="="/>
