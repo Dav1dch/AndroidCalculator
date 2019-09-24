@@ -6,16 +6,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
+        android:layout_weight="2"
         android:id="@+id/textview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:background="#2196F3"
-        android:gravity="end"
-        android:paddingTop="250dp"
-        android:textSize="55sp" />
+        android:gravity="bottom|end"
+        android:textColor="#ffffff"
+        android:maxLines="1"
+        android:autoSizeTextType="uniform"
+    />
+
     <TableLayout
+        android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:stretchColumns="*"
         >
         <TableRow

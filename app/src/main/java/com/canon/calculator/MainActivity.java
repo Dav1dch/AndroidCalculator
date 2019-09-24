@@ -8,70 +8,33 @@ import android.widget.TextView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button buttonAC;
-    Button buttonDel;
-    Button buttonPercent;
-    Button buttonDivide;
-    Button button7;
-    Button button8;
-    Button button9;
-    Button buttonMuti;
-    Button button4;
-    Button button5;
-    Button button6;
-    Button buttonMinus;
-    Button button1;
-    Button button2;
-    Button button3;
-    Button buttonPlus;
-    Button buttonDot;
-    Button button0;
-    Button buttonEqual;
+
     TextView text;
     private StringBuilder result = new StringBuilder();
 
     private void init(){
         text = findViewById(R.id.textview);
-        button0 = (Button) findViewById(R.id.button0);
-        button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
-        button4 = (Button) findViewById(R.id.button4);
-        button5 = (Button) findViewById(R.id.button5);
-        button6 = (Button) findViewById(R.id.button6);
-        button7 = (Button) findViewById(R.id.button7);
-        button8 = (Button) findViewById(R.id.button8);
-        button9 = (Button) findViewById(R.id.button9);
-        buttonAC = (Button) findViewById(R.id.buttonAC);
-        buttonDel = (Button) findViewById(R.id.buttonDEL);
-        buttonMinus = (Button) findViewById(R.id.buttonMinus);
-        buttonMuti = (Button) findViewById(R.id.buttonMuti);
-        buttonEqual = (Button) findViewById(R.id.buttonEqual);
-        buttonDivide = (Button) findViewById(R.id.buttonDivide);
-        buttonPercent = (Button) findViewById(R.id.buttonPercent);
-        buttonDot = (Button) findViewById(R.id.buttonDot);
-        buttonPlus = (Button) findViewById(R.id.buttonPlus);
+       findViewById(R.id.button0).setOnClickListener(this);
+       findViewById(R.id.button1).setOnClickListener(this);
+       findViewById(R.id.button2).setOnClickListener(this);
+       findViewById(R.id.button3).setOnClickListener(this);
+       findViewById(R.id.button4).setOnClickListener(this);
+       findViewById(R.id.button5).setOnClickListener(this);
+       findViewById(R.id.button6).setOnClickListener(this);
+       findViewById(R.id.button7).setOnClickListener(this);
+       findViewById(R.id.button8).setOnClickListener(this);
+       findViewById(R.id.button9).setOnClickListener(this);
+       findViewById(R.id.buttonAC).setOnClickListener(this);
+       findViewById(R.id.buttonDEL).setOnClickListener(this);
+       findViewById(R.id.buttonMinus).setOnClickListener(this);
+       findViewById(R.id.buttonMuti).setOnClickListener(this);
+       findViewById(R.id.buttonEqual).setOnClickListener(this);
+       findViewById(R.id.buttonDivide).setOnClickListener(this);
+       findViewById(R.id.buttonPercent).setOnClickListener(this);
+       findViewById(R.id.buttonDot).setOnClickListener(this);
+       findViewById(R.id.buttonPlus).setOnClickListener(this);
 
 
-        buttonPlus.setOnClickListener(this);
-        buttonPercent.setOnClickListener(this);
-        buttonDot.setOnClickListener(this);
-        buttonDel.setOnClickListener(this);
-        buttonDivide.setOnClickListener(this);
-        buttonMuti.setOnClickListener(this);
-        buttonMinus.setOnClickListener(this);
-        buttonAC.setOnClickListener(this);
-        buttonEqual.setOnClickListener(this);
-        button0.setOnClickListener(this);
-        button1.setOnClickListener(this);
-        button2.setOnClickListener(this);
-        button3.setOnClickListener(this);
-        button4.setOnClickListener(this);
-        button5.setOnClickListener(this);
-        button6.setOnClickListener(this);
-        button7.setOnClickListener(this);
-        button8.setOnClickListener(this);
-        button9.setOnClickListener(this);
     }
 
     @Override
@@ -83,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        int size = result.length();
         switch (v.getId()){
             case R.id.button0:
                 result.append("0");
@@ -140,26 +104,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.buttonPercent:
-                result.append("%");
-                text.setText(result);
+                if ((result.charAt(size-1) > '0') && (result.charAt(size-1) < '9')){
+                    result.append("%");
+                    text.setText(result);
+                }
+
                 break;
 
             case R.id.buttonPlus:
+                if ((size > 0) && (result.charAt(size-1)=='-')){
+                    result.deleteCharAt(size-1);
+                }
+                else if((size>0) && (result.charAt(size-1)=='-'))break;
                 result.append("+");
                 text.setText(result);
                 break;
 
             case R.id.buttonMinus:
+                if ((size > 0) && (result.charAt(size-1)=='+')){
+                    result.deleteCharAt(size-1);
+                }
+                else if((size>0) && (result.charAt(size-1)=='-'))break;
                 result.append("-");
                 text.setText(result);
                 break;
 
             case R.id.buttonDEL:
-                result.deleteCharAt(result.length()-1);
-                text.setText(result);
+                if (size > 0){
+                    result.deleteCharAt(result.length()-1);
+                    text.setText(result);
+                }
                 break;
 
             case R.id.buttonMuti:
+                if ((size == 0) || (result.charAt(size-1) == '*') || ((size > 2) && (result.charAt(size - 2) == '*'))){
+                    break;
+                }
+                else if ((size>2) && (result.charAt(size-2)=='/')){
+                    result.delete(size-2, size);
+                }
+                else if ((result.charAt(size-1)=='/') || (result.charAt(size-1)=='+') || (result.charAt(size-1)=='-')){
+                    result.deleteCharAt(size-1);
+                }
                 result.append("*");
                 text.setText(result);
                 break;
@@ -175,6 +161,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 text.setText(result);
                 break;
             case R.id.buttonDivide:
+                if((size == 0) || (result.charAt(size-1) == '/') || ((size > 2) && (result.charAt(size - 2) == '/'))){
+                    break;
+                }
+                else if ((size > 2) && (result.charAt(size-2)=='*')){
+                    result.delete(size-2, size);
+                }
+                else if ((result.charAt(size-1)=='*') || (result.charAt(size-1)=='+') || (result.charAt(size-1)=='-')){
+                    result.deleteCharAt(size-1);
+                }
                 result.append("/");
                 text.setText(result);
                 break;
