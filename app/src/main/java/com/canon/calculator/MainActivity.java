@@ -110,8 +110,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.buttonDot:
-                result.append(".");
-                text.setText(result);
+                int tmp = size - 1;
+                calculate cal = new calculate();
+                int flag = 0;
+                while (!cal.isSymbol(result.charAt(tmp)) && tmp>0){
+                    if(result.charAt(tmp) == '.') {
+                           flag = 1;
+                           break;
+                        }
+                    tmp--;
+                    }
+
+                if (flag == 0){
+                    result.append(".");
+                    text.setText(result);
+                }
                 break;
 
             case R.id.buttonPercent:
@@ -172,7 +185,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.buttonEqual:
-                result.append("=");
+                calculate calE = new calculate();
+                result=calE.format(String.valueOf(result));
                 text.setText(result);
                 break;
             case R.id.buttonDivide:
