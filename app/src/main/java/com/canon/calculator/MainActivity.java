@@ -188,8 +188,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calculate calE = new calculate();
                 result=new StringBuilder(calE.getResult(String.valueOf(result)));
                 text.setText(result);
-                if (result.equals("error"));
-                result.delete(0, result.length());
+                if (result.equals("error")){
+                    result.delete(0, result.length());
+                }
                 break;
             case R.id.buttonDivide:
                 if((size == 0) || (result.charAt(size-1) == '/') || ((size > 2) && (result.charAt(size - 2) == '/'))){
