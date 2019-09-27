@@ -45,22 +45,33 @@ public class calculate {
         StringBuilder NewExperssion = new StringBuilder(experssion);
         if ((NewExperssion.charAt(0) == '-') || (NewExperssion.charAt(0) == '+'))
             NewExperssion.insert(0, '0');
-        int size = NewExperssion.length();
         int j;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < NewExperssion.length(); i++) {
             if (((NewExperssion.charAt(i) == '+') || (NewExperssion.charAt(i) == '-'))
                     && ((NewExperssion.charAt(i - 1) == '/') || (NewExperssion.charAt(i - 1) == '*'))) {
-                for (j = i + 1; j < size; ++j) {
-                    if (!(isDigit(NewExperssion.charAt(j)) && NewExperssion.charAt(j) == '.')) {
+                for (j = i + 1; j < NewExperssion.length(); ++j) {
+                    if (isSymbol(NewExperssion.charAt(j))) {
                         break;
                     }
                 }
-                NewExperssion.insert(j + 1, ')');
+                NewExperssion.insert(j, ')');
                 NewExperssion.insert(i, '(');
                 NewExperssion.insert(i + 1, '0');
                 i += 2;
             }
+            else if(((NewExperssion.charAt(i) == '+') || (NewExperssion.charAt(i) == '-'))
+                    && (NewExperssion.charAt(i - 1) == '(')){
+                        NewExperssion.insert(i, '0');
+                    }
+            if (NewExperssion.charAt(i)=='%'){
+                String per = "*0.01";
+                for (int l = 0 ;l < per.length(); l++){
+                    NewExperssion.insert(i++, per.charAt(l));
+                }
+                NewExperssion.deleteCharAt(i--);
+            }
         }
+        System.out.println(String.valueOf(NewExperssion));
         return NewExperssion;
     }
 
@@ -150,7 +161,7 @@ public class calculate {
 
     public static void main(String[] args) {
         calculate cal = new calculate();
-        String test = "1-2";
+        String test = "10%+10%";
         System.out.println(cal.getResult(test));
     }
 }

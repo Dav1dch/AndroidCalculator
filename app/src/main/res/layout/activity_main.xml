@@ -10,7 +10,7 @@
         android:id="@+id/textview"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="#2196F3"
+        android:background="#5ab0f6"
         android:gravity="bottom|end"
         android:textColor="#ffffff"
         android:maxLines="1"
@@ -49,7 +49,7 @@
             <Button
                 android:id="@+id/button7"
                 style="@style/ButtonTheme"
-                android:text="7"/>
+                android:text="7" />
             <Button
                 android:id="@+id/button8"
                 style="@style/ButtonTheme"
@@ -117,12 +117,14 @@
             <Button
                 android:id="@+id/buttonDEL"
                 style="@style/ButtonTheme"
+                android:textColor="#F3202b"
                 android:text="Del"/>
 
             <Button
                 android:id="@+id/buttonEqual"
                 style="@style/ButtonTheme"
                 android:background="#2196f3"
+                android:textColor="#ffffff"
                 android:text="="/>
         </TableRow>
         </TableLayout>

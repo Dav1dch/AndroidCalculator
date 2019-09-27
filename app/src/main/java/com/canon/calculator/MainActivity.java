@@ -3,6 +3,7 @@ package com.canon.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
@@ -110,10 +111,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.buttonDot:
+                if (size == 0){
+                    result.append('.');
+                    text.setText(result);
+                    break;
+                }
                 int tmp = size - 1;
                 calculate cal = new calculate();
                 int flag = 0;
-                while (!cal.isSymbol(result.charAt(tmp)) && tmp>0){
+                while (!cal.isSymbol(result.charAt(tmp)) && tmp >= 0){
                     if(result.charAt(tmp) == '.') {
                            flag = 1;
                            break;
@@ -128,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.buttonPercent:
-                if ((result.charAt(size-1) > '0') && (result.charAt(size-1) < '9')){
+                if ((result.charAt(size-1) >= '0') && (result.charAt(size-1) <= '9')){
                     result.append("%");
                     text.setText(result);
                 }
@@ -185,10 +191,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.buttonEqual:
+                if (size == 0){
+                    break;
+                }
                 calculate calE = new calculate();
                 result=new StringBuilder(calE.getResult(String.valueOf(result)));
                 text.setText(result);
-                if (result.equals("error")){
+                if (String.valueOf(result).equals("error")){
                     result.delete(0, result.length());
                 }
                 break;
