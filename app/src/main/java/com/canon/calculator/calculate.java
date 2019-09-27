@@ -33,7 +33,7 @@ public class calculate {
     }
 
     public boolean isDigit(char ch) {
-        return ((ch > '0') && (ch < '9'));
+        return ((ch >= '0') && (ch <= '9'));
 
     }
 
@@ -69,6 +69,9 @@ public class calculate {
                     NewExperssion.insert(i++, per.charAt(l));
                 }
                 NewExperssion.deleteCharAt(i--);
+            }
+            if((NewExperssion.charAt(i) == '(') && (NewExperssion.length() > 1) && (this.isDigit(NewExperssion.charAt(i-1)))){
+                NewExperssion.insert(i++, '*');
             }
         }
         System.out.println(String.valueOf(NewExperssion));
@@ -161,7 +164,7 @@ public class calculate {
 
     public static void main(String[] args) {
         calculate cal = new calculate();
-        String test = "10%+10%";
+        String test = "10.";
         System.out.println(cal.getResult(test));
     }
 }

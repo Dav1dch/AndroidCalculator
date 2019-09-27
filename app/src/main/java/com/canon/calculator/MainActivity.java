@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int tmp = size - 1;
                 calculate cal = new calculate();
                 int flag = 0;
-                while (!cal.isSymbol(result.charAt(tmp)) && tmp >= 0){
+                while (tmp >= 0 &&!cal.isSymbol(result.charAt(tmp))){
                     if(result.charAt(tmp) == '.') {
                            flag = 1;
                            break;
