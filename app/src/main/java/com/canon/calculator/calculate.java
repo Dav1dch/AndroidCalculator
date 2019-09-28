@@ -154,7 +154,12 @@ public class calculate {
 
                 }
             }
-            return String.valueOf(result.peek());
+            String finalresult = String.valueOf(result.peek());
+            if (!finalresult.equals("") && finalresult.indexOf('.') > 0){
+                finalresult = finalresult.replaceAll("0+?$", "");
+                finalresult = finalresult.replaceAll("[.]$", "");
+            }
+            return String.valueOf(finalresult);
 
         } catch (Exception e) {
             return "error";
