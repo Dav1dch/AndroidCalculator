@@ -10,11 +10,12 @@ import android.view.View;
 import com.canon.calculator.calculate;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
-    TextView text;
+    TextView text, resultText;
     private StringBuilder result = new StringBuilder();
 
     private void init(){
-        text = findViewById(R.id.textview);
+       text = findViewById(R.id.textview);
+       resultText = findViewById(R.id.resultview);
        findViewById(R.id.button0).setOnClickListener(this);
        findViewById(R.id.button1).setOnClickListener(this);
        findViewById(R.id.button2).setOnClickListener(this);
@@ -196,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 calculate calE = new calculate();
                 result=new StringBuilder(calE.getResult(String.valueOf(result)));
-                text.setText(result);
+                resultText.setText(result);
                 if (String.valueOf(result).equals("error")){
                     result.delete(0, result.length());
                 }
