@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="#fefefe"
     android:layout_width="match_parent">
 <LinearLayout
     android:layout_width="wrap_content"
@@ -29,14 +30,16 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
+        android:paddingTop="70dp"
         android:layout_gravity="center">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="用户名"
-            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:text="@string/userName"
             android:textColor="#aaaaaa"
-            android:layout_gravity="center"/>
+            android:textSize="20sp" />
         <EditText
             android:id="@+id/userName"
             android:layout_width="250sp"
@@ -50,7 +53,7 @@
             android:layout_gravity="center"
             android:textSize="20sp"
             android:textColor="#aaaaaa"
-            android:text="密码"
+            android:text="@string/password"
             />
         <EditText
             android:id="@+id/password"
@@ -67,14 +70,36 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:orientation="vertical">
-        <LinearLayout
+
+        <ImageButton
+            android:layout_height="70dip"
+            android:layout_width="70dip"
+            android:scaleType="centerInside"
+            android:id="@+id/login"
+            android:background="#fefefe"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/login"
+            />
+        <TextView
+            android:id="@+id/exit"
+            android:paddingTop="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_width="wrap_content"
+            android:clickable="true"
+            android:text="@string/exitt"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:paddingTop="70dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:text="剩余登陆次数:"/>
+                android:text="@string/times"/>
            <TextView
                android:id="@+id/counts"
                android:layout_width="wrap_content"
@@ -82,15 +107,6 @@
                android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/login"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:src="@mipmap/triangle"
-            android:scaleType="centerInside"
-            android:background="@drawable/shape"/>
     </LinearLayout>
 
 </LinearLayout>

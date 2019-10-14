@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">login</string>
+    <string name="app_name" translatable="true">登陆</string>
+    <string name="userName" translatable="false">用户名</string>
+    <string name="password" translatable="false">密码</string>
+    <string name="times" translatable="false">剩余登陆次数 : </string>
+    <string name="exitt" translatable="true">退出</string>
 </resources>

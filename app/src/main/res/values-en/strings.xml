@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">login</string>
+    <string name="userName" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="times" translatable="false">Remaining times : </string>
+    <string name="exitt" translatable="true">exit</string>
+</resources>
