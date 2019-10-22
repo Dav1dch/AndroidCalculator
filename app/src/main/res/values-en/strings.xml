@@ -4,4 +4,7 @@
     <string name="password" translatable="false">Password</string>
     <string name="times" translatable="false">Remaining times : </string>
     <string name="exitt" translatable="true">exit</string>
+    <string name="failToomuch" translatable="true">fail to login</string>
+    <string name="fail" translatable="true">wrong password</string>
+    <string name="success" translatable="true">success</string>
 </resources>

@@ -32,22 +32,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         init();
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.login:
                 String passwd = "123456";
                 if (!password.getText().toString().equals(passwd)){
-                    Toast.makeText(this,"密码错误", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,R.string.fail, Toast.LENGTH_SHORT).show();
                     times--;
                     count.setText(" "+times.toString());
                     if (times == 0){
                         findViewById(R.id.login).setClickable(false);
-                        Toast.makeText(this,"无法登录", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this,R.string.failToomuch, Toast.LENGTH_SHORT).show();
                     }
                 }else{
                     times = 3;
-                    Toast.makeText(this,"登陆成功", Toast.LENGTH_SHORT).show();
+                    count.setText(" " + times.toString());
+                    Toast.makeText(this,R.string.success, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.exit:

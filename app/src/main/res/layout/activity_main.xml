@@ -33,32 +33,20 @@
         android:paddingTop="70dp"
         android:layout_gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/userName"
-            android:textColor="#aaaaaa"
-            android:textSize="20sp" />
         <EditText
             android:id="@+id/userName"
             android:layout_width="250sp"
+            android:hint="@string/userName"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="#cccccc"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            android:textColor="#aaaaaa"
-            android:text="@string/password"
             />
         <EditText
             android:id="@+id/password"
             android:layout_width="250sp"
             android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:paddingTop="30sp"
             android:gravity="center"
             android:inputType="textPassword"
             android:textColor="#cccccc"
@@ -83,7 +71,7 @@
             />
         <TextView
             android:id="@+id/exit"
-            android:paddingTop="50dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_width="wrap_content"

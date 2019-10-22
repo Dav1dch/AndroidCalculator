@@ -4,4 +4,7 @@
     <string name="password" translatable="false">密码</string>
     <string name="times" translatable="false">剩余登陆次数 : </string>
     <string name="exitt" translatable="true">退出</string>
+    <string name="failToomuch" translatable="true">错误次数达三次，清稍后再试</string>
+    <string name="fail" translatable="true">密码错误</string>
+    <string name="success" translatable="true">登陆成功</string>
 </resources>
